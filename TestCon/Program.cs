@@ -21,7 +21,7 @@ namespace TestCon
             Container = builder.Build();
             //
 
-            IList<Items.Item> wList = new List<Items.Item>();
+            IList<Items.HandItem> wList = new List<Items.HandItem>();
 
             var toLog = Container.Resolve<ILogger>();
 //            var toLog = new Logger(new LogToScreen());
@@ -30,12 +30,20 @@ namespace TestCon
             wList.Add(new Items.ShortSword(){Name="Short Sword",Description = "Iron",Endurance = 110,Strength = 25,Weight = 2, DiceType = 10, DiceNumber = 3});
             wList.Add(new Items.ShortSword(){Name="Short Sword",Description = "Steel",Endurance = 120,Strength = 30,Weight = 2, DiceType = 10, DiceNumber = 3});
 
+            var myEngine = new Items.Engine(){Name = "Pulse Engine", Description = "", PowerOutput = 100, Size = 2, Rating = 'B', Cost = 10000};
+
+            var myShip = new Ship(myEngine);
+
+            toLog.Write($"Engine type {myShip.TheEngine.Name}");
+
+            toLog.Write($"Number of hard points {myShip.HardPoints.Count}");
+
             var itemQuery =
                 from thing in wList
                 where thing.Endurance > 100
                 select thing;
 
-            foreach( Items.Item thing in itemQuery)
+            foreach( Items.HandItem thing in itemQuery)
             {
                 toLog.Write($"This is a test { thing.Name } - {thing.Description}");
             }
@@ -47,6 +55,7 @@ namespace TestCon
             new RJCObject<int>(toLog).ShowDetails();
 
             new RJCObject<ShortSword>(toLog).ShowDetails();
+
 
             Console.ReadKey();
         }

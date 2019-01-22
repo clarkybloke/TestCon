@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Items
 {
-    public class ShortSword : Item
+    public class ShortSword : HandItem
     {
         public int DiceType { get; set; }
         public int DiceNumber { get; set; }

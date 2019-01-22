@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Items
 {
-    public class Item 
+    public class HandItem 
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -14,8 +15,10 @@ namespace Items
         public int Strength { get; set; }
         public int Endurance { get; set; }
 
-        public Item()
+        public HandItem()
         {
         }
     }
+    
+
 }

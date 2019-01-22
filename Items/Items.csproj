@@ -45,8 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dice.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="IShipItem.cs" />
+    <Compile Include="Ship.cs" />
     <Compile Include="ShortSword.cs" />
-    <Compile Include="Item.cs" />
+    <Compile Include="HandItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
