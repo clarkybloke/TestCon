@@ -3,5 +3,15 @@
     ViewBag.Title = "Ship";
 }
 
-<h2>Ship</h2>
+<h2>Test Card</h2>
+<canvas id="myCanvas" width="200" height="1000" style="border:1px solid #000000;"></canvas>
 
+<script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+</script>
+
+<script type="text/javascript" src="~/Content/js/RJCScript.js"></script>
